@@ -1,24 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Form, Field } from "react-final-form";
+import { Wizard } from "./components/Wizard";
+import "./App.css";
+
+const Step1 = () => {
+  return (
+    <div>
+      <div>
+        <label>Как вас зовут?</label>
+        <Field
+          name="name"
+          component="input"
+          type="text"
+          placeholder="Имя"
+          required
+        />
+      </div>
+    </div>
+  );
+};
+
+const Step2 = () => {
+  return (
+    <div>
+      <div>
+        <label>Как вас зовут?</label>
+        <Field
+          name="name"
+          component="input"
+          type="text"
+          placeholder="Имя"
+          required
+        />
+      </div>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="app">
+      {/* <h1>Ваша дата смерти</h1>
+      <div>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Ваша дата смерти рассчитывается исходя из статичтических параметров:
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ul>
+          <li>Возраст</li>
+          <li>Пол</li>
+          <li>Место проживания</li>
+          <li>Образ жизни</li>
+          <li>Стресс</li>
+          <li>Болезни</li>
+          <li>Вредные привычки</li>
+          <li>Питание</li>
+          <li>Риск</li>
+        </ul>
+        <p>
+          Приложение не учитывает возможные форс-мажорные обстоятельства и
+          несчастные случаи. Данные рассчитаны на основе статистики, реальная
+          дата может отличаться.
+        </p>
+      </div> */}
+      <Wizard />
     </div>
   );
 }
